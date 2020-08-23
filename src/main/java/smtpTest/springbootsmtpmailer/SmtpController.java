@@ -14,14 +14,8 @@ public class SmtpController {
     SmtpService smtpService;
 
     @GetMapping("/")
-    public Boolean index(){
-        Request r=new Request();
-        r.setBody("test");
-        r.setFrom("support@nextprimecloud.com");
-        r.setSubject("test subject");
-        r.setTo("amreshpattnaik6@gmail.com");
-        smtpService.send(r);
-        return true;
+    public String index(){
+       return "Spring Boot & Amazon SES Example;";
     }
     @PostMapping("/send")
     public void send(@RequestBody Request request){
